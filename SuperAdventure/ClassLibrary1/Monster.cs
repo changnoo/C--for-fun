@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Engine
+{
+    public class Monster : LivingCreature
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        //public int MaximumHitPoints { get; set; }
+        //public int CurrentHitPoints { get; set; }
+        public int MaximumDamage { get; set; }
+        public int RewardExperiencePoints { get; set; }
+        public int RewardGold { get; set; }
+        public List<LootItem> LootTable { get; set; }
+
+        public Monster(int id, string name, int maxdmg, int rewardexp, int rewardgold, int currenthitpoints, int maxhitpoints) : base(currenthitpoints, maxhitpoints)
+        {
+            ID = id;
+            Name = name;
+            MaximumDamage = maxdmg;
+            RewardExperiencePoints = rewardexp;
+            RewardGold = rewardgold;
+            LootTable = new List<LootItem>();
+        }
+
+    }
+}
